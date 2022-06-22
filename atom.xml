@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://2jduead.github.io</id>
+    <title>Gridea</title>
+    <updated>2022-06-22T02:50:06.223Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://2jduead.github.io"/>
+    <link rel="self" href="https://2jduead.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://2jduead.github.io/images/avatar.png</logo>
+    <icon>https://2jduead.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[视频倍速]]></title>
+        <id>https://2jduead.github.io/post/videospeed/</id>
+        <link href="https://2jduead.github.io/post/videospeed/">
+        </link>
+        <updated>2022-06-01T02:50:56.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="通过代码设置">通过代码设置</h2>
+<p>F12 进入开发者模式，在控制台console输入</p>
+<pre><code>document.querySelector(&quot;video&quot;).playbackRate=2.0
+</code></pre>
+<p>就是2.0倍速了，可以自己设置，如果无效，自己查下播放器的class是不是video。<br>
+##通过插件设置<br>
+Global Speed：<a href="https://chrome.google.com/webstore/detail/jpbjcnkcffbooppibceonlgknpkniiff">Chrome</a>|<a href="https://microsoftedge.microsoft.com/addons/detail/mjhlabbcmjflkpjknnicihkfnmbdfced">Edge</a></p>
+<h2 id="通过多插件配合使用">通过多插件配合使用</h2>
+<p>百度网盘视频并非video格式，可以用<a href="https://greasyfork.org/scripts/441747">百度网盘视频播放器</a>将播放器替换为dplayer，再配合global speed达到倍速效果</p>
+<script defer src="https://commento.net/js/commento.js"></script>
+<div id="commento"></div>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[常用代码]]></title>
+        <id>https://2jduead.github.io/post/code/</id>
+        <link href="https://2jduead.github.io/post/code/">
+        </link>
+        <updated>2022-06-01T02:04:15.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="ubuntu系统">Ubuntu系统</h1>
+<h2 id="开放所有端口">开放所有端口</h2>
+<pre><code>iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+</code></pre>
+<h2 id="ubuntu镜像默认设置了iptable规则关闭它">Ubuntu镜像默认设置了Iptable规则，关闭它</h2>
+<pre><code>apt-get purge netfilter-persistent
+reboot
+</code></pre>
+<h2 id="v2ray">v2ray</h2>
+<pre><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)
+</code></pre>
+<h2 id="测速">测速</h2>
+<pre><code>wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+</code></pre>
+<h2 id="获取ipv6">获取ipv6</h2>
+<pre><code class="language-dhclient">dhclient -6 enp0s3
+</code></pre>
+<h2 id="测试流媒体">测试流媒体</h2>
+<pre><code>wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.6/nf_2.6_linux_amd64 &amp;&amp; chmod +x nf &amp;&amp; clear &amp;&amp; ./nf
+</code></pre>
+<pre><code>bash &lt;(curl -sSL &quot;https://github.com/CoiaPrant/MediaUnlock_Test/raw/main/check.sh&quot;)
+</code></pre>
+<h2 id="x-ui">X-UI</h2>
+<pre><code>wget -N https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh &amp;&amp; bash install.sh
+</code></pre>
+<h2 id="cf-warp">CF WARP</h2>
+<pre><code>wget -N --no-check-certificate https://gitlab.com/rwkgyg/cfwarp/raw/main/CFwarp.sh &amp;&amp; bash CFwarp.sh
+</code></pre>
+<h1 id="gridea软件">Gridea软件</h1>
+<h2 id="插入commento评论系统">插入commento评论系统</h2>
+<p>底部粘帖以下代码：</p>
+<pre><code>&lt;script defer src=&quot;https://commento.net/js/commento.js&quot;&gt;&lt;/script&gt;
+&lt;div id=&quot;commento&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="自定义css">自定义CSS</h2>
+<pre><code>pre code/*增加代码的border*/
+{
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: none;
+    border-color: rgb(204, 204, 204);
+    border-left: 6px solid rgb(33, 152, 99);
+}
+
+pre code .linenum/*显示代码行数对应的样式*/
+{
+ padding-right:20px;
+ word-spacing: 0px;
+}
+
+.hljs {  /*代码块高亮的全局属性*/
+  color: #000000;
+  background: #F9F7F3;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-params
+{
+  color: #ff9823;
+}
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+  color: #AE87FA;
+}
+
+.hljs-function,
+.hljs-built_in,
+.hljs-name,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-deletion {
+  color: #f82375;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link {
+  color: #629755;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #808080;
+}
+
+.hljs-meta {
+  color: #5bdaed;
+}
+
+.hljs-string,
+.hljs-attribute,
+.hljs-addition {
+  color: #eedc70;
+}
+
+.hljs-attr,
+.hljs-section,
+.hljs-title,
+.hljs-type {
+  color: #a5da2d;
+}
+
+.hljs-selector-class
+{
+   color: #a5da2d;
+}
+
+.hljs-name,
+.hljs-selector-id,
+{ 
+  color: #f92672;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</code></pre>
+<script defer src="https://commento.net/js/commento.js"></script>
+<div id="commento"></div>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://2jduead.github.io/post/hello-gridea/</id>
+        <link href="https://2jduead.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
