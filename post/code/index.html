@@ -1,0 +1,320 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常用代码 | Gridea</title>
+<link rel="shortcut icon" href="https://2jduead.github.io/favicon.ico?v=1678941475114">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://2jduead.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="常用代码 | Gridea - Atom Feed" href="https://2jduead.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Ubuntu系统
+开放所有端口
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+
+Ubuntu镜像默认设置了..." />
+    <meta name="keywords" content="code" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://2jduead.github.io">
+  <img class="avatar" src="https://2jduead.github.io/images/avatar.png?v=1678941475114" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              常用代码
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-10-29
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://2jduead.github.io/tag/SjU4y5G2R/" class="post-tag">
+                  # code
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h1 id="ubuntu系统">Ubuntu系统</h1>
+<h2 id="开放所有端口">开放所有端口</h2>
+<pre><code>iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+</code></pre>
+<h2 id="ubuntu镜像默认设置了iptable规则关闭它">Ubuntu镜像默认设置了Iptable规则，关闭它</h2>
+<pre><code>apt-get purge netfilter-persistent
+reboot
+</code></pre>
+<h2 id="v2ray">v2ray</h2>
+<pre><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)
+</code></pre>
+<h2 id="测速">测速</h2>
+<pre><code>wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+</code></pre>
+<h2 id="获取ipv6">获取ipv6</h2>
+<pre><code>dhclient -6 enp0s3
+</code></pre>
+<h2 id="测试流媒体">测试流媒体</h2>
+<pre><code>wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.6/nf_2.6_linux_amd64 &amp;&amp; chmod +x nf &amp;&amp; clear &amp;&amp; ./nf
+</code></pre>
+<pre><code>bash &lt;(curl -sSL &quot;https://github.com/CoiaPrant/MediaUnlock_Test/raw/main/check.sh&quot;)
+</code></pre>
+<h2 id="x-ui">X-UI</h2>
+<pre><code>wget -N https://gitlab.com/rwkgyg/x-ui-yg/raw/main/install.sh &amp;&amp; bash install.sh
+</code></pre>
+<h1 id="gridea软件">Gridea软件</h1>
+<h2 id="插入commento评论系统">插入commento评论系统</h2>
+<p>底部粘帖以下代码：</p>
+<pre><code>&lt;script defer src=&quot;https://commento.net/js/commento.js&quot;&gt;&lt;/script&gt;
+&lt;div id=&quot;commento&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h2 id="自定义css">自定义CSS</h2>
+<pre><code>pre code/*增加代码的border*/
+{
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: none;
+    border-color: rgb(204, 204, 204);
+    border-left: 6px solid rgb(33, 152, 99);
+}
+
+pre code .linenum/*显示代码行数对应的样式*/
+{
+ padding-right:20px;
+ word-spacing: 0px;
+}
+
+.hljs {  /*代码块高亮的全局属性*/
+  color: #000000;
+  background: #F9F7F3;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-params
+{
+  color: #ff9823;
+}
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+  color: #AE87FA;
+}
+
+.hljs-function,
+.hljs-built_in,
+.hljs-name,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-deletion {
+  color: #f82375;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link {
+  color: #629755;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #808080;
+}
+
+.hljs-meta {
+  color: #5bdaed;
+}
+
+.hljs-string,
+.hljs-attribute,
+.hljs-addition {
+  color: #eedc70;
+}
+
+.hljs-attr,
+.hljs-section,
+.hljs-title,
+.hljs-type {
+  color: #a5da2d;
+}
+
+.hljs-selector-class
+{
+   color: #a5da2d;
+}
+
+.hljs-name,
+.hljs-selector-id,
+{ 
+  color: #f92672;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</code></pre>
+<script defer src="https://commento.net/js/commento.js"></script>
+<div id="commento"></div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#ubuntu%E7%B3%BB%E7%BB%9F">Ubuntu系统</a>
+<ul>
+<li><a href="#%E5%BC%80%E6%94%BE%E6%89%80%E6%9C%89%E7%AB%AF%E5%8F%A3">开放所有端口</a></li>
+<li><a href="#ubuntu%E9%95%9C%E5%83%8F%E9%BB%98%E8%AE%A4%E8%AE%BE%E7%BD%AE%E4%BA%86iptable%E8%A7%84%E5%88%99%E5%85%B3%E9%97%AD%E5%AE%83">Ubuntu镜像默认设置了Iptable规则，关闭它</a></li>
+<li><a href="#v2ray">v2ray</a></li>
+<li><a href="#%E6%B5%8B%E9%80%9F">测速</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96ipv6">获取ipv6</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E6%B5%81%E5%AA%92%E4%BD%93">测试流媒体</a></li>
+<li><a href="#x-ui">X-UI</a></li>
+</ul>
+</li>
+<li><a href="#gridea%E8%BD%AF%E4%BB%B6">Gridea软件</a>
+<ul>
+<li><a href="#%E6%8F%92%E5%85%A5commento%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F">插入commento评论系统</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89css">自定义CSS</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://2jduead.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://2jduead.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
